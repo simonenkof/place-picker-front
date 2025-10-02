@@ -2,7 +2,16 @@
   "name": "@place-picker-front/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "nx run @place-picker-front/place-picker-front:start",
+    "build": "nx run @place-picker-front/place-picker-front:build",
+    "test": "nx run @place-picker-front/place-picker-front:test",
+    "lint:check": "nx run @place-picker-front/place-picker-front:lint",
+    "lint:fix": "nx run @place-picker-front/place-picker-front:lint --fix",
+    "stylelint:check": "nx run p@place-picker-front/place-picker-front:stylelint",
+    "stylelint:fix": "nx run @place-picker-front/place-picker-front:stylelint --fix",
+    "pre-commit": "lint-staged"
+  },
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -11,9 +20,14 @@
     "@react-router/node": "^7.2.0",
     "@react-router/serve": "^7.2.0",
     "isbot": "^4.4.0",
+    "lint-staged": "^16.2.3",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "react-router": "^7.2.0"
+    "react-router": "^7.2.0",
+    "stylelint": "^16.24.0",
+    "stylelint-config-prettier-scss": "^1.0.0",
+    "stylelint-config-standard": "^39.0.0",
+    "stylelint-config-standard-scss": "^16.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
@@ -49,6 +63,7 @@
     "jiti": "2.4.2",
     "jsdom": "~22.1.0",
     "nx": "21.6.3",
+    "nx-stylelint": "^18.0.2",
     "prettier": "^2.6.2",
     "sass": "^1.55.0",
     "tslib": "^2.3.0",
@@ -59,5 +74,19 @@
   },
   "workspaces": [
     "apps/*"
-  ]
+  ],
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.html": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{scss,css}": [
+      "stylelint --fix",
+      "prettier --write"
+    ]
+  }
 }
