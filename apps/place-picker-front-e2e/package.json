@@ -1,0 +1,10 @@
+{
+  "name": "@place-picker-front/place-picker-front-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "implicitDependencies": [
+      "@place-picker-front/place-picker-front"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
+  "files": [],
+  "references": [
+    {
+      "path": "./apps/place-picker-front-e2e"
+    },
+    {
+      "path": "./apps/place-picker-front"
+    }
+  ]
+}
